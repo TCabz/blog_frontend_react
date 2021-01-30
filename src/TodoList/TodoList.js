@@ -3,7 +3,21 @@ import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
 import Grid from "@material-ui/core/Grid";
 
-const api_url = "https://p4-blog-api.herokuapp.com/";
+// const api_url = "https://p4-blog-api.herokuapp.com/";
+
+var proxyUrl = "https://cors-anywhere.herokuapp.com/",
+  targetUrl = "https://p4-blog-api.herokuapp.com/api/v1/todos";
+fetch(proxyUrl + targetUrl)
+  .then((blob) => blob.json())
+  .then((data) => {
+    console.table(data);
+    document.querySelector("pre").innerHTML = JSON.stringify(data, null, 2);
+    return data;
+  })
+  .catch((e) => {
+    console.log(e);
+    return e;
+  });
 
 class TodoList extends Component {
   constructor(props) {
