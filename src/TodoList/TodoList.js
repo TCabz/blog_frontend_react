@@ -3,7 +3,7 @@ import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
 import Grid from "@material-ui/core/Grid";
 
-const api_url = "http://localhost:3001/api/v1/todos";
+const api_url = "https://p4-blog-api.herokuapp.com/";
 
 class TodoList extends Component {
   constructor(props) {
