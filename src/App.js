@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import TodoList from "./TodoList/TodoList";
+import BlogList from "./BlogList/BlogList";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -19,7 +19,7 @@ function App() {
           Blogs
         </Typography>
         <hr />
-        <TodoList />
+        <BlogList />
       </header>
     </div>
   );

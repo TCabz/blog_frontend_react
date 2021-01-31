@@ -2,7 +2,7 @@
   "name": "blog_frontend_react",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://p4-blog-api.herokuapp.com/api/v1/todos",
+  "proxy": "https://git.heroku.com/blog-backend-p4.git",
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import TodoForm from "./TodoForm";
-import TodoItem from "./TodoItem";
+import BlogForm from "./BlogForm";
+import BlogItem from "./BlogItem";
 import Grid from "@material-ui/core/Grid";
 
-// const api_url = "https://p4-blog-api.herokuapp.com/";
+const api_url = "https://github.com/TCabz/blog_backend_rails.git";
 
 var proxyUrl = "https://cors-anywhere.herokuapp.com/",
-  targetUrl = "https://p4-blog-api.herokuapp.com/api/v1/todos";
+  targetUrl = "https://blog-backend-p4.herokuapp.com/";
 fetch(proxyUrl + targetUrl)
   .then((blob) => blob.json())
   .then((data) => {
@@ -19,14 +19,14 @@ fetch(proxyUrl + targetUrl)
     return e;
   });
 
-class TodoList extends Component {
+class BlogList extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       items: [],
     };
-    this.updateTodoList = this.updateTodoList.bind(this);
+    this.updateBlogList = this.updateBlogList.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
   }
 
@@ -44,7 +44,7 @@ class TodoList extends Component {
       });
   }
 
-  updateTodoList(item) {
+  updateBlogList(item) {
     let _items = this.state.items;
     // unshift adds to the beginning of the array
     _items.unshift(item);
@@ -74,16 +74,16 @@ class TodoList extends Component {
     return (
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <TodoForm api_url={api_url} updateTodoList={this.updateTodoList} />
+          <BlogForm api_url={api_url} updateBlogList={this.updateBlogList} />
         </Grid>
 
-        <Grid item xs={12} id="todo_list">
+        <Grid item xs={12} id="blog_list">
           {this.state.items.map((item) => (
-            <TodoItem key={item.id} item={item} deleteItem={this.deleteItem} />
+            <BlogItem key={item.id} item={item} deleteItem={this.deleteItem} />
           ))}
         </Grid>
       </Grid>
     );
   }
 }
-export default TodoList;
+export default BlogList;

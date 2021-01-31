@@ -6,6 +6,8 @@ import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { Typography } from "@material-ui/core";
 
+const api_url = "https://github.com/TCabz/blog_backend_rails.git";
+
 const useStyles = makeStyles({
   root: {
     height: "auto",
